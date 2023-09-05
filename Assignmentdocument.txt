@@ -172,6 +172,17 @@ then go to cd /var/www/html/wordpress
 vi wp-config.php and paste all the content which is shown in webbrowser 
 then run the installation
 
+Enable gzip compression for reduced payload size
+
+Edit your NGINX configuration file: 
+
+Locate your nginx.conf file (usually found in /etc/nginx/ directory) and open it with your preferred text editor.
+Add gzip settings: Inside the http block of your configuration file, add the following lines:gzip on; gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript; gzip_proxied any; gzip_vary on;These settings tell NGINX to enable gzip compression for specific file types (gzip_types) and ensure proper handling of compressed content when working with proxies (gzip_proxied, gzip_vary).
+Adjust compression level: You can further fine-tune gzip settings by adjusting the compression level using the gzip_comp_level directive:gzip_comp_level 5;The value ranges from 1 (least compressed but fastest) to 9 (most compressed but slowest). A value of 5 offers a good balance between speed and compression ratio.
+Save and reload: After making these changes, save the configuration file and reload NGINX to apply the new settings:sudo nginx -t sudo nginx -s reload
+By enabling gzip compression in your NGINX configuration, you can reduce payload size and improve overall performance. However, it's essential to monitor your server's CPU usage, as compression can increase CPU load. If you notice a significant impact on your server's resources, consider adjusting the compression level or selectively compressing specific content types.
+
+
 
 
 File with all the imagesis also attached with all your reference 
