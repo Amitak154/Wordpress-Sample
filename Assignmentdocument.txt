@@ -188,6 +188,8 @@ By enabling gzip compression in your NGINX configuration, you can reduce payload
 File with all the imagesis also attached with all your reference 
 https://drive.google.com/drive/folders/1yiYSLOaKQY0jKSmqDWwHYRDxFwsmu3yi?usp=drive_link
 
+Github Job see the file in this repo githubCi-cd Pipeline.txt
+
 
 
 
