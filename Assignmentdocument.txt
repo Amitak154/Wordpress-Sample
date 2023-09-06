@@ -19,6 +19,10 @@ CREATE DATABASE wp;
 GRANT ALL PRIVILEGES ON wp.* TO 'wp_user'@localhost;
 exit
 
+Install node and npm
+apt install nodejs
+apt install npm
+
 
 Install composer
 https://getcomposer.org/download/
